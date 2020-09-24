@@ -1,22 +1,19 @@
 <?php
+	$serber='localhost';
+	$user1='root';
+	$pass1='';
+	$bd='sintegral';
 
-					$serber='localhost';
-					$user1='root';
-					$pass1='';
-					$bd='sintegral';
-
-
-function totales($serber,$user1,$pass1,$bd,$a){
-               $connection = mysql_connect($serber,$user1,$pass1) or die ("Unable to connect!");
-			   $query = "$a";
-			   $result = mysql_db_query($bd, $query, $connection) or die ("Error in query: $query. " . mysql_error());
-			   list($a) = mysql_fetch_row($result);
-			   $data = mysql_num_rows($result);
-			   mysql_free_result($result); 
+	function totales($serber,$user1,$pass1,$bd,$a){
+        $connection = mysql_connect($serber,$user1,$pass1) or die ("Unable to connect!");
+		$query = "$a";
+		$result = mysql_db_query($bd, $query, $connection) or die ("Error in query: $query. " . mysql_error());
+		list($a) = mysql_fetch_row($result);
+		$data = mysql_num_rows($result);
+		mysql_free_result($result); 
 			   
-			   return $a;
-
-}
+		return $a;
+	}
 
 /*$a=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_anio_informe) as total FROM c_articulos_informe INNER JOIN c_informe_coltlax ON c_articulos_informe.c_n_cve_informe_coltlax = c_informe_coltlax.c_n_cve_informe_coltlax where c_informe_coltlax.c_n_cve_anio_informe=2012');
 $b=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_anio_informe) as total FROM c_articulos_informe INNER JOIN c_informe_coltlax ON c_articulos_informe.c_n_cve_informe_coltlax = c_informe_coltlax.c_n_cve_informe_coltlax where c_informe_coltlax.c_n_cve_anio_informe=2013');
@@ -25,19 +22,19 @@ $d=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_ani
 $e=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_anio_informe) as total FROM c_articulos_informe INNER JOIN c_informe_coltlax ON c_articulos_informe.c_n_cve_informe_coltlax = c_informe_coltlax.c_n_cve_informe_coltlax where c_informe_coltlax.c_n_cve_anio_informe=2016');
 */
 
-$a1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2012');
-$b1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2013');
-$c1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2014');
-$d1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2015');
-$e1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2016 AND c_n_cve_persona !=7');
+	$a1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2012');
+	$b1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2013');
+	$c1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2014');
+	$d1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2015');
+	$e1=totales($serber,$user1,$pass1,$bd,'SELECT count(c_articulos_informecv.d_c_anio) as total FROM c_articulos_informecv where c_articulos_informecv.d_c_anio=2016 AND c_n_cve_persona !=7');
 
-$a=$a+$a1;
-$b=$b+$b1;
-$c=$c+$c1;
-$d=$d+$d1;
-$e=$e+$e1;
+	$a=$a+$a1;
+	$b=$b+$b1;
+	$c=$c+$c1;
+	$d=$d+$d1;
+	$e=$e+$e1;
 
-$totala=$a+$b+$c+$d+$e;
+	$totala=$a+$b+$c+$d+$e;
 
 
 //libros
@@ -49,19 +46,19 @@ $dc=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_an
 $ec=totales($serber,$user1,$pass1,$bd,'SELECT count(c_informe_coltlax.c_n_cve_anio_informe) as total FROM c_libros_informe INNER JOIN c_informe_coltlax ON c_libros_informe.c_n_cve_informe_coltlax = c_informe_coltlax.c_n_cve_informe_coltlax where c_informe_coltlax.c_n_cve_anio_informe=2016');
 */
 
-$ac1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2012');
-$bc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2013');
-$cc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2014');
-$dc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2015');
-$ec1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2016 and c_n_cve_persona!=7');
+	$ac1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2012');
+	$bc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2013');
+	$cc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2014');
+	$dc1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2015');
+	$ec1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_libros_informecv where d_c_anio=2016 and c_n_cve_persona!=7');
 
-$ac=$ac+$ac1;
-$bc=$bc+$bc1;
-$cc=$cc+$cc1;
-$dc=$dc+$dc1;
-$ec=$ec+$ec1;
+	$ac=$ac+$ac1;
+	$bc=$bc+$bc1;
+	$cc=$cc+$cc1;
+	$dc=$dc+$dc1;
+	$ec=$ec+$ec1;
 
-$totalc=$ac+$bc+$cc+$dc+$ec;
+	$totalc=$ac+$bc+$cc+$dc+$ec;
 
 //Capitulos libros
 /*
@@ -72,19 +69,19 @@ $dl=totales($serber,$user1,$pass1,$bd,'SELECT Count(c_informe_coltlax.c_n_cve_an
 $el=totales($serber,$user1,$pass1,$bd,'SELECT Count(c_informe_coltlax.c_n_cve_anio_informe) as total FROM c_capitulos_informe INNER JOIN c_informe_coltlax ON c_capitulos_informe.c_n_cve_informe_coltlax = c_informe_coltlax.c_n_cve_informe_coltlax where c_informe_coltlax.c_n_cve_anio_informe=2016');
 */
 
-$al1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2012');
-$bl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2013');
-$cl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2014');
-$dl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2015');
-$el1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2016 and c_n_cve_persona!=7');
+	$al1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2012');
+	$bl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2013');
+	$cl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2014');
+	$dl1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2015');
+	$el1=totales($serber,$user1,$pass1,$bd,'select count(*) from c_capitulos_informecv where d_c_anio=2016 and c_n_cve_persona!=7');
 
-$al=$al+$al1;
-$bl=$bl+$bl1;
-$cl=$cl+$cl1;
-$dl=$dl+$dl1;
-$el=$el+$el1;
+	$al=$al+$al1;
+	$bl=$bl+$bl1;
+	$cl=$cl+$cl1;
+	$dl=$dl+$dl1;
+	$el=$el+$el1;
 
-$totall=$al+$bl+$cl+$dl+$el;
+	$totall=$al+$bl+$cl+$dl+$el;
 
 
 //Reseñas
@@ -100,83 +97,82 @@ $el=totales($serber,$user1,$pass1,$bd,'SELECT Count(c_informe_coltlax.c_n_cve_an
 $br=totales($serber,$user1,$pass1,$bd,'select count(*) from c_resena_cv where d_c_ano=2013');
 $cr=totales($serber,$user1,$pass1,$bd,'select count(*) from c_resena_cv where d_c_ano=2014');
 $dr=totales($serber,$user1,$pass1,$bd,'select count(*) from c_resena_cv where d_c_ano=2015');*/
-$er=totales($serber,$user1,$pass1,$bd,'select count(*) from c_resena_cv where d_c_ano=2016 and c_n_cve_persona!=7');
+	$er=totales($serber,$user1,$pass1,$bd,'select count(*) from c_resena_cv where d_c_ano=2016 and c_n_cve_persona!=7');
 
 
 
-$tota1r=$ar+$br+$cr+$dr+$er;
+	$tota1r=$ar+$br+$cr+$dr+$er;
 
 //Dictamen
 /*$ad1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2012');
 $bd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2013');
 $cd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2014');
 $dd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2015');*/
-$ed1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2016  and c_n_cve_persona!=7');
+	$ed1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_dictamen_informecv where d_c_anio=2016  and c_n_cve_persona!=7');
 
-$adr=$ad+$ad1;
-$bdr=$bd+$bd1;
-$cdr=$cd+$cd1;
-$ddr=$dd+$dd1;
-$edr=$ed+$ed1;
+	$adr=$ad+$ad1;
+	$bdr=$bd+$bd1;
+	$cdr=$cd+$cd1;
+	$ddr=$dd+$dd1;
+	$edr=$ed+$ed1;
 
-$totaldic=$adr+$bdr+$cdr+$ddr+$edr;
+	$totaldic=$adr+$bdr+$cdr+$ddr+$edr;
 
 //Difusión
 /*$add1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2012%"');
 $bdd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2013%"');
 $cdd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2014%"');
 $ddd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2015%"');*/
-$edd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2016%"  and c_n_cve_persona!=7');
+	$edd1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_difusion_informe where d_c_anio like "2016%"  and c_n_cve_persona!=7');
 
-$addr=$add+$add1;
-$bddr=$bdd+$bdd1;
-$cddr=$cdd+$cdd1;
-$dddr=$ddd+$ddd1;
-$eddr=$edd+$edd1;
+	$addr=$add+$add1;
+	$bddr=$bdd+$bdd1;
+	$cddr=$cdd+$cdd1;
+	$dddr=$ddd+$ddd1;
+	$eddr=$edd+$edd1;
 
-$totaldif=$addr+$bddr+$cddr+$dddr+$eddr;
+	$totaldif=$addr+$bddr+$cddr+$dddr+$eddr;
 
-//Proyectos
-$ap1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2012');
-$bp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2013');
-$cp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2014');
-$dp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2015');
-$ep1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2016  and c_n_persona!=7');
+	//Proyectos
+	$ap1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2012');
+	$bp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2013');
+	$cp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2014');
+	$dp1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2015');
+	$ep1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_proyectos_informecv where d_c_aniop=2016  and c_n_persona!=7');
 
-$apr=$ap+$ap1;
-$bpr=$bp+$bp1;
-$cpr=$cp+$cp1;
-$dpr=$dp+$dp1;
-$epr=$ep+$ep1;
+	$apr=$ap+$ap1;
+	$bpr=$bp+$bp1;
+	$cpr=$cp+$cp1;
+	$dpr=$dp+$dp1;
+	$epr=$ep+$ep1;
 
-$totalproy=$apr+$bpr+$cpr+$dpr+$epr;
+	$totalproy=$apr+$bpr+$cpr+$dpr+$epr;
 
 //Revistas
 /*$arr1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2012');
 $brr1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2013');
 $crr1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2014');
 $drr1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2015');*/
-$err1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2016  and c_n_cve_persona!=7');
+	$err1=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_revista_informe where d_c_anio=2016  and c_n_cve_persona!=7');
 
-$arr=$arr+$arr1;
-$brr=$brr+$brr1;
-$crr=$crr+$crr1;
-$drr=$drr+$drr1;
-$err=$err+$err1;
+	$arr=$arr+$arr1;
+	$brr=$brr+$brr1;
+	$crr=$crr+$crr1;
+	$drr=$drr+$drr1;
+	$err=$err+$err1;
 
-$totalrev=$arr+$brr+$crr+$drr+$err;
+	$totalrev=$arr+$brr+$crr+$drr+$err;
 
-//Congresos
-$acrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2012%" and c_n_cve_persona!=7');
-$bcrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2013%" and c_n_cve_persona!=7');
-$ccrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2014%" and c_n_cve_persona!=7');
-$dcrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2015%" and c_n_cve_persona!=7');
-$ecrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2016%" and c_n_cve_persona!=7');
+	//Congresos
+	$acrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2012%" and c_n_cve_persona!=7');
+	$bcrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2013%" and c_n_cve_persona!=7');
+	$ccrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2014%" and c_n_cve_persona!=7');
+	$dcrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2015%" and c_n_cve_persona!=7');
+	$ecrr=totales($serber,$user1,$pass1,$bd,'SELECT count(*) as total FROM c_participantes_ponenciascv where d_f_fecha_inicio like "2016%" and c_n_cve_persona!=7');
 
-$totalcong=$acrr+$bcrr+$ccrr+$dcrr+$ecrr;
+	$totalcong=$acrr+$bcrr+$ccrr+$dcrr+$ecrr;
 
 ?>		
-
 
 <!doctype html>
 <html lang="en">
@@ -218,12 +214,16 @@ $totalcong=$acrr+$bcrr+$ccrr+$dcrr+$ecrr;
 	<script type="text/javascript" src="js/loader.js"></script>	
 	<script>
 	function dproduc(){
-	a=form.mes.value;
-	b=form.anio.value;
+		a=form.mes.value;
+		b=form.anio.value;
 	
-	if (a==""){alert('Selecciona el mes'); return false}
-	else if (b==""){alert('Selecciona el año'); return false}
-	else {window.open("../excel3/excel2.php?mes="+a+"&anio="+b);}
+		if (a==""){
+			alert('Selecciona el mes'); return false
+			}else if (b==""){
+				alert('Selecciona el año'); return false
+				}else{
+					window.open("../excel3/excel2.php?mes="+a+"&anio="+b);
+					}
 	}
 	</script>
 </head>

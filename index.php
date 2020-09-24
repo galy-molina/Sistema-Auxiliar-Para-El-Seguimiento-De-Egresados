@@ -64,9 +64,17 @@
 			
 			
 			<p align="justify">
-				
-
-Con el fin de mejorar los servicios educativos que ofrece el Sistema Tecnológico, las autoridades educativas de este sector instrumentaron una estrategia que permite contar con datos que dan cuenta de la calidad de los mismos. Este estudio denominado “Seguimiento de Egresados” forma parte de dicha estrategia y tiene como propósito principal conocer la pertinencia de la formación obtenida por los egresados de la educación media superior tecnológica de la modalidad de bachillerato tecnológico, en su desempeño académico y profesional, para que a partir de este conocimiento se realicen propuestas de mejora. En este sentido, su opinión como egresado es muy valiosa.
+				Con el fin de mejorar los servicios 
+				educativos que ofrece el Sistema Tecnológico, 
+				las autoridades educativas de este sector 
+				instrumentaron una estrategia que permite 
+				contar con datos que dan cuenta de la calidad de los mismos. 
+				Este estudio denominado “Seguimiento de Egresados” forma parte de dicha 
+				estrategia y tiene como propósito principal conocer la pertinencia de la 
+				formación obtenida por los egresados de la educación media superior 
+				tecnológica de la modalidad de bachillerato tecnológico, en su desempeño 
+				académico y profesional, para que a partir de este conocimiento se realicen 
+				propuestas de mejora. En este sentido, su opinión como egresado es muy valiosa.
 			</p>
 
 			<div class="carousel slide" id="carousel-235307">
@@ -116,14 +124,14 @@ Con el fin de mejorar los servicios educativos que ofrece el Sistema Tecnológic
 			</div>
 			<h2>&nbsp;</h2>
 			<p align="justify">Con el fin de mejorar los servicios educativos que ofrece el   Sistema Tecnológico, las autoridades educativas de este sector   instrumentaron una estrategia que permite contar con datos que dan   cuenta de la calidad de los mismos. Este estudio denominado “Seguimiento   de Egresados” forma parte de dicha estrategia y tiene como propósito   principal conocer la pertinencia de la formación obtenida por los   egresados de la educación media superior tecnológica de la modalidad de   bachillerato tecnológico, en su desempeño académico y profesional, para que a partir de este conocimiento se realicen propuestas de mejora. En   este sentido, su opinión como egresado es muy valiosa.<br>
-              <br>
-              <br>
-              <br>
-Cabe aclarar, que la información proporcionada se <strong><strong>MANEJARÁ DE MANERA CONFIDENCIAL Y CON FINES EXCLUSIVAMENTE ESTADÍSTICOS</strong></strong>.   La solicitud de su nombre y dirección es solamente para actualizar el   directorio de egresados de cada plantel, por lo que le suplicamos   conteste todas las preguntas de acuerdo con las instrucciones. <br>
-<br>
-Si tiene alguna duda, sugerencia o comentario respecto al estudio,   diríjase al responsable del Seguimiento de Egresados en su plantel.  Si usted realiza esta encuesta por primera vez de clic <a href="registro.php"><button type="button" class="btn btn-danger">aquí</button>
-</a>, o en el apartado de <span class="label label-primary">Registro</span>.</p>
-			<p>&nbsp;</p>
+            	<br>
+            	<br>
+            	<br>
+				Cabe aclarar, que la información proporcionada se <strong><strong>MANEJARÁ DE MANERA CONFIDENCIAL Y CON FINES EXCLUSIVAMENTE ESTADÍSTICOS</strong></strong>.   La solicitud de su nombre y dirección es solamente para actualizar el   directorio de egresados de cada plantel, por lo que le suplicamos   conteste todas las preguntas de acuerdo con las instrucciones. <br>
+				<br>
+				Si tiene alguna duda, sugerencia o comentario respecto al estudio,   diríjase al responsable del Seguimiento de Egresados en su plantel.  Si usted realiza esta encuesta por primera vez de clic <a href="registro.php"><button type="button" class="btn btn-danger">aquí</button>
+				</a>, o en el apartado de <span class="label label-primary">Registro</span>.</p>
+				<p>&nbsp;</p>
 			<hr>
 			
 			<p>

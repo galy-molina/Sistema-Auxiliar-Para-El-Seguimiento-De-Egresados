@@ -1,17 +1,16 @@
 <?php
-$consulta1="select count(resp6) as total from resultado1 where tipo=1 and mat=".$mat;
+	$consulta1="select count(resp6) as total from resultado1 where tipo=1 and mat=".$mat;
 	
 	$resultado=$mysqli->query($consulta1) or die (mysql_error());
 	$actor = $resultado->fetch_assoc();
 	$total1= $actor['total'];
 	if ($total1>0){
 		echo "<script type='text/javascript'>";
-  echo "alert('Ya contestaste el cuestionario!')";
-echo "</script>";
-include("index.php");
-	}
-		else{
-			?>
+  		echo "alert('Ya contestaste el cuestionario!')";
+		echo "</script>";
+		include("index.php");
+	}else{
+?>
 		
 	
 

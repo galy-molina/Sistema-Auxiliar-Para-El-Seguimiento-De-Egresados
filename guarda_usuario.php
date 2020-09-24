@@ -7,40 +7,38 @@
 	
 	$resultado=$mysqli->query($consulta) or die (mysql_error());
 	
-if ($resultado->num_rows>0)
-{
-	echo" <br><br><center><h1>La matricula ya existe</h1>";
-	$asd=1;
-}
-else{
-print("No Existen registros");
-	$nom=$_POST['nombre'];
-	$pas1=$_POST['pas1'];
-	$apellidos=$_POST['apellidos'];
-	$edad=$_POST['edad'];
-	$genero=$_POST['genero'];
-	$calle=$_POST['calle'];
-	$next=$_POST['next'];
-	$nint=$_POST['nint'];
-	$colonia=$_POST['colonia'];
-	$cp=$_POST['cp'];
-	$telefono=$_POST['telefono'];
-	$correo=$_POST['correo'];
-	$municipio=$_POST['municipio'];
-	$efed=$_POST['efederativa'];
-	$civil=$_POST['civil'];
-	$nombrep=$_POST['nombrep'];
-	$numerop=$_POST['numerop'];
-	$estadop=$_POST['estadop'];
-	$adeingreso=$_POST['adeingreso'];
-	$adeegreso=$_POST['adeegreso'];
-	$esp=$_POST['especialidade'];
-	
-	$cad1="INSERT INTO formulario1(ncontrol,pass,nombre,apellidos,edad,genero,calle,next,nint,colonia,cp,telefono,correo,municipio,efederativa,civil,nombrep,numerop,estadop,adeingreso,adeegreso,especialidade)" ;
-	$cad2="VALUES ('$mat','$pas1','$nom','$apellidos','$edad','$genero','$calle','$next','$nint','$colonia','$cp','$telefono','$correo','$municipio','$efed','$civil','$nombrep','$numerop','$estadop','$adeingreso','$adeegreso','$esp')";
-	$query=$cad1.$cad2;
-		$resultado=$mysqli->query($query);
-}
+	if ($resultado->num_rows>0){
+		echo" <br><br><center><h1>La matricula ya existe</h1>";
+		$asd=1;
+	}else{
+	print("No Existen registros");
+		$nom=$_POST['nombre'];
+		$pas1=$_POST['pas1'];
+		$apellidos=$_POST['apellidos'];
+		$edad=$_POST['edad'];
+		$genero=$_POST['genero'];
+		$calle=$_POST['calle'];
+		$next=$_POST['next'];
+		$nint=$_POST['nint'];
+		$colonia=$_POST['colonia'];
+		$cp=$_POST['cp'];
+		$telefono=$_POST['telefono'];
+		$correo=$_POST['correo'];
+		$municipio=$_POST['municipio'];
+		$efed=$_POST['efederativa'];
+		$civil=$_POST['civil'];
+		$nombrep=$_POST['nombrep'];
+		$numerop=$_POST['numerop'];
+		$estadop=$_POST['estadop'];
+		$adeingreso=$_POST['adeingreso'];
+		$adeegreso=$_POST['adeegreso'];
+		$esp=$_POST['especialidade'];
+		
+		$cad1="INSERT INTO formulario1(ncontrol,pass,nombre,apellidos,edad,genero,calle,next,nint,colonia,cp,telefono,correo,municipio,efederativa,civil,nombrep,numerop,estadop,adeingreso,adeegreso,especialidade)" ;
+		$cad2="VALUES ('$mat','$pas1','$nom','$apellidos','$edad','$genero','$calle','$next','$nint','$colonia','$cp','$telefono','$correo','$municipio','$efed','$civil','$nombrep','$numerop','$estadop','$adeingreso','$adeegreso','$esp')";
+		$query=$cad1.$cad2;
+			$resultado=$mysqli->query($query);
+	}
 ?>
 
 <!DOCTYPE html>

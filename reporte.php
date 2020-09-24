@@ -1,70 +1,41 @@
 <?php
 require('conexion.php');
-
-					
-					
-function totales($serber,$user1,$pass1,$bd,$a){
-               $connection = mysql_connect($serber,$user1,$pass1) or die ("Unable to connect!");
-			   $query = "$a";
-			   $result = mysql_db_query($bd, $query, $connection) or die ("Error in query: $query. " . mysql_error());
-			   list($a) = mysql_fetch_row($result);
-			   $data = mysql_num_rows($result);
-			   mysql_free_result($result); 
-			   
-			   return $a;
-			   }
-			   
-$a1=totales($serber,$user1,$pass1,$bd,'
-SELECT
-count(resultado1.resp1) as total
-FROM
-resultado1
-where
-resultado1.resp1 like "Estudia"
-group by resultado1.resp1');			   
-
-$a2=totales($serber,$user1,$pass1,$bd,'SELECT
-count(resultado1.resp1) as total
-FROM
-resultado1
-where
-resultado1.resp1 like "Trabaja" 
-group by resultado1.resp1');
-
-$a3=totales($serber,$user1,$pass1,$bd,'SELECT
-count(resultado1.resp1) as total
-FROM
-resultado1
-where
-resultado1.resp1 like "Estudia y Trabaja"
-group by resultado1.resp1');			
-
-$a4=totales($serber,$user1,$pass1,$bd,'SELECT
-count(resultado1.resp1) as total
-FROM
-resultado1
-where
-resultado1.resp1 like "No estudia, ni trabaja"  
-
-group by resultado1.resp1');	
-
-function ceros($a){
-	if ($a==""){
-	$a=0;
+			
+	function totales($serber,$user1,$pass1,$bd,$a){
+		$connection = mysql_connect($serber,$user1,$pass1) or die ("Unable to connect!");
+		$query = "$a";
+     	$result = mysql_db_query($bd, $query, $connection) or die ("Error in query: $query. " . mysql_error());
+		list($a) = mysql_fetch_row($result);
+		$data = mysql_num_rows($result);
+		mysql_free_result($result); 
+		return $a;
 	}
-	
-	return $a;
-}
+			   
+	$a1=totales($serber,$user1,$pass1,$bd,'SELECT count(resultado1.resp1) as total FROM
+	resultado1 where resultado1.resp1 like "Estudia" group by resultado1.resp1');			   
 
-$a1=ceros($a1);
-$a2=ceros($a2);
-$a3=ceros($a3);
-$a4=ceros($a4);
+	$a2=totales($serber,$user1,$pass1,$bd,'SELECT count(resultado1.resp1) as total FROM
+	resultado1 where resultado1.resp1 like "Trabaja" group by resultado1.resp1');
 
+	$a3=totales($serber,$user1,$pass1,$bd,'SELECT count(resultado1.resp1) as total FROM
+	resultado1 where resultado1.resp1 like "Estudia y Trabaja" group by resultado1.resp1');			
 
+	$a4=totales($serber,$user1,$pass1,$bd,'SELECT count(resultado1.resp1) as total FROM 
+	resultado1 where resultado1.resp1 like "No estudia, ni trabaja" group by resultado1.resp1');	
+
+	function ceros($a){
+			if ($a==""){
+				$a=0;
+			}
+		return $a;
+	}
+
+	$a1=ceros($a1);
+	$a2=ceros($a2);
+	$a3=ceros($a3);
+	$a4=ceros($a4);
 
 //echo "---- $a1 $a2 $a3 $a4 ---";
-
 ?>
 
 <!DOCTYPE html>
@@ -182,13 +153,8 @@ $a4=ceros($a4);
         chart.draw(data, options);
       }
     </script>
-
-
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-
-	
-	
   </body>
 </html>
